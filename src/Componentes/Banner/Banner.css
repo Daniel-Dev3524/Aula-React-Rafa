@@ -1,8 +1,10 @@
-.banner{
-    background-color: blue;
-    text-align: center;
+.Banner{
+    background-color: #004AAD;
+    text-align: right;
+    justify-content: center;
+    
 }
-.banner img{
+.Banner img{
     max-height:100% ;
 
 }

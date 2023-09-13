@@ -1,7 +1,7 @@
-import './botao.css'
-const Botao=()=>{
+import './Botao.css'
+const Botao=(props)=>{
     return(
-        <button className="botao">Criar Card</button>
+        <button className="Botao"> {props.children}</button>
     )
     
 }

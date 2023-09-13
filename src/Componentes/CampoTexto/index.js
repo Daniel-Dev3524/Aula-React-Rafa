@@ -1,23 +1,42 @@
-import './CampoTexto.css'
+import './CampoTexto.css';
+import {useState}from 'react';
 
-const CampoTexto = (props)=>{
+
+const CampoTexto = (props) => {
     console.log(props);
 
-    return(
-       <div className ="campo-texto">
+    //let valor = "XPTO"
+
+
+    const [valor,setValor]= useState("XPTO")
+
+
+    const aodigitar = (evento) => {
+        props.aoAlterar(evento.target.value)
        
 
-       <label>{props.label}</label> 
-       
 
-       <input placeholder={props.placeholder}/>
+    }
 
-
-       
+    return (
+        <div className="campo-texto">
 
 
-       
-       </div>
+            <label>{props.label}</label>
+
+
+            <input
+                value={props.valor}//nome,cargo,imagem
+                onChange={aodigitar}
+                required={props.eObrigatorio}
+                placeholder={props.placeholder} />
+
+
+
+
+
+
+        </div>
 
     )
 }
