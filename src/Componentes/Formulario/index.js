@@ -5,9 +5,11 @@ import Botao from '../Botao';
 import { useState } from 'react';
 
 
- export const Formulario = (props) => {
+export const Formulario = (props) => {
 
-   
+    
+
+
 
 
     const [nome, setNome] = useState("");
@@ -26,7 +28,11 @@ import { useState } from 'react';
             imagem,
             time
         })
-       
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
+
     };
 
 
@@ -43,19 +49,22 @@ import { useState } from 'react';
 
                 <CampoTexto
                     eObrigatorio={true}
-                    label='Nome' placeholder='Digite seu nome'
+                    label='Nome'
+                    placeholder='Digite seu nome'
                     valor={nome}
                     aoAlterar={valor => setNome(valor)} />
 
                 <CampoTexto
                     eObrigatorio={true}
-                    label='Cargo' placeholder='Digite seu cargo'
+                    label='Cargo'
+                    placeholder='Digite seu cargo'
                     valor={cargo}
                     aoAlterar={valor => setCargo(valor)} />
 
                 <CampoTexto
                     eObrigatorio={true}
-                    label='Imagem' placeholder='Digite o endereço da sua imagem'
+                    label='Imagem'
+                    placeholder='Digite o endereço da sua imagem'
                     valor={imagem}
                     aoAlterar={valor => setImagem(valor)} />
 
@@ -63,7 +72,7 @@ import { useState } from 'react';
                     label="Time"
                     itens={props.times}
                     valor={time}
-                    aoAlterar={valor=>setTime(valor)}/>
+                    aoAlterar={valor => setTime(valor)} />
 
                 <Botao>
                     Cria Card

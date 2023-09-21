@@ -6,23 +6,26 @@ import './Time.css'
 const Time = (props) => {
     const css = { backgroudColor: props.corDeFundo }
     return (
-        <section className='time' style={css}>
+        props.colaboradores.lenght > 0 ?
 
-            <h3>{props.nome}</h3>
+            <section className='time' style={css}>
 
-            {props.colaboradores.map(colaborador => <Colaborador
+                <h3>{props.nome}</h3>
+
+                {props.colaboradores.map(colaborador => <Colaborador
                     key={colaborador.nome}
                     nome={colaborador.nome}
                     imagem={colaborador.imagem}
                     cargo={colaborador.cargo}
 
-                     />)}         
-           
-              
+                />)}
 
-            
 
-        </section>
+
+
+
+            </section>
+            : ''
     )
 
 }
